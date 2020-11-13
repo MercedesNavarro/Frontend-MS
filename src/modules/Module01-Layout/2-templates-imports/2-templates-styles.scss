@@ -1,0 +1,67 @@
+/* Ejercicio 2: Crear dos temas distintos y mostrar los resultados en una página.
+Los cambios en el tema afectan a las siguientes características:
+• Color 
+• Fuente
+• Border Radius
+• Shadow Box
+Para visualizar los cambios debería ser suficiente importar un tema u otro en el fichero de estilos principal. */
+
+@import "./themeA.scss";
+/* @import "./themeB.scss"; */
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    div {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .base {
+        background-color: $base;
+        color: if($base == blue, #fff, inherit);
+    }
+    
+    .important {
+        background-color: darken($base, 20%);
+        color: if($base == blue, #fff, inherit);
+    }
+    
+    .warning {
+        background-color: lighten($base, 40%);
+    }
+    
+    .principal-font {
+        font-family: $principal-font;
+    }
+    
+    .secondary-font {
+        font-family: $secondary-font;
+    }
+    
+    .border {
+        border: 1px solid gray;
+        
+        @if ($base == blue) {
+            @include radius;
+        }
+    }
+    
+    .shadow {
+        box-shadow: $shadow;
+    }
+}

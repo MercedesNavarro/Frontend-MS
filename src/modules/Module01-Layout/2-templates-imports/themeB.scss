@@ -1,0 +1,7 @@
+$base: blue;
+$principal-font: 'Times New Roman', Times, serif;
+$secondary-font: Georgia, 'Times New Roman', Times, serif;
+$shadow: 10px 10px 5px 2px gray;
+@mixin radius {
+    border-radius: 10px;
+}
