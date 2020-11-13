@@ -1,0 +1,25 @@
+{
+  "name": "frontend-ms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server -c bs-config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MercedesNavarro/Frontend-MS.git"
+  },
+  "author": "MNC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MercedesNavarro/Frontend-MS/issues"
+  },
+  "homepage": "https://github.com/MercedesNavarro/Frontend-MS#readme",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "devDependencies": {
+    "sass": "^1.29.0"
+  }
+}

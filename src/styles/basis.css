@@ -1,0 +1,41 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a {
+    display: inline-block;
+}
+
+.header {
+    border-bottom: .4rem solid #d9d900;
+}
+
+.header > h2, .header > h3 {
+    display: inline-block;
+}
+
+li.module {
+    border-bottom: 1px solid #999;
+    padding: 0 0 20px;
+}
+
+h4 {
+    margin: 15px 0 5px;
+}
+
+h5 {
+    margin: 5px 0;
+    font-weight: normal;
+}
+
+.footer {
+    margin: 40px 0;
+}
+
+.footer a.back {
+    text-decoration: none;
+}
+
+.footer a.back:hover {
+    text-decoration: underline;
+}

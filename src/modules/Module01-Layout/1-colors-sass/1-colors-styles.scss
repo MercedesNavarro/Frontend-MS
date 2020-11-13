@@ -1,0 +1,79 @@
+$colors: #f44336, #3f51b5, #4caf50;
+$breakpoint-s: 320px;
+$breakpoint-m: 960px;
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+main.general-container {
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+
+    gap: 5px;
+}
+
+.container {
+    width: 100vw;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 100px;
+    gap: 5px;
+
+    @media screen and (max-width: $breakpoint-m) {
+        height: auto;
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 50px);
+    }
+
+    @media screen and (max-width: $breakpoint-s) {
+        height: auto;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 30px;
+        grid-auto-rows: 30px;
+    }
+
+    .box {
+        border-radius: 10px;
+        border: 2px solid rgba(128, 128, 128, 0.37);
+        font: {
+            family: Arial;
+            size: 0.8rem;
+        }
+
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+
+    $num: 1;
+    @each $color in $colors {
+        &.container-#{$num} {
+            .base-color {
+                background-color: $color;
+            }
+            
+            @for $i from 1 through 4 {
+                .darken-#{$i} {
+                    background-color: darken($color, ($i * 10%));
+                    color: lighten(rgb(143, 142, 142), ($i * 10%));
+                }
+                .lighten-#{$i} {
+                    background-color: lighten($color, ($i * 10%));
+                    color: darken(rgb(31, 30, 30), ($i * 10%));
+                }
+            }
+        }
+
+        $num: $num + 1;
+    }
+}
